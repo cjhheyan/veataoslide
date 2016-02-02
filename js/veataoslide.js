@@ -39,7 +39,7 @@
             var slidehoverli = opts.slidehoverli;
             var prev = opts.prev;
             var next = opts.next;
-            var pagecontex = opts.pagecontex;
+            var pagecontex = opts.slide-pagecontex;
             var autoplay = opts.autoplay;
             var autotime = opts.autotime;
             var pc_handtime = opts.pc_handtime;
@@ -65,13 +65,13 @@
             function slidescroll(number,auto_time,hand_time,display_rownum){
                 var nowpage = 0;
                 var len = $(slidebox+" "+ slide).find("li").length;
-                var length = $(slidebox+" "+ slide + " li:first .page").length;
+                var length = $(slidebox+" "+ slide + " li:first .slide-page").length;
                 $(slide).css({"left":0});
 
                 //本例为左右滚动，即
                 if(length<number)
                 {
-                    $(slide).css({"width":len*100+"%"}).find("li").css({"width":100/len+"%"}).find(".page").css({"width":100/(number/display_rownum)+"%"});
+                    $(slide).css({"width":len*100+"%"}).find("li").css({"width":100/len+"%"}).find(".slide-page").css({"width":100/(number/display_rownum)+"%"});
                     if(content_ys)
                     {
                             var con_len = $(content_box+" ul li").length;
@@ -80,7 +80,7 @@
                 }
                 else
                 {
-                    $(slide).css({"width":len*100+"%"}).find("li").css({"width":100/len+"%"}).find(".page").css({"width":100/(length/display_rownum)+"%"});
+                    $(slide).css({"width":len*100+"%"}).find("li").css({"width":100/len+"%"}).find(".slide-page").css({"width":100/(length/display_rownum)+"%"});
                     if(content_ys)
                     {
                             var con_len = $(content_box+" ul li").length;
@@ -89,7 +89,7 @@
                 }
                 if(pagecontex)
                 {
-                    var btn = "<div class='slidehoverli' id='"+ slidehoverli +"'>";
+                    var btn = "<div class='veatao-pagination' id='"+ slidehoverli +"'>";
                     for(var i=0; i < len; i++) {
                         var ii = i+1;
                         if(i==0)
@@ -143,7 +143,7 @@
                 }
 
                 //给class为slidebox的容器加上触滑监听事件
-               /* $(slidebox).swipe({
+                /* $(slidebox).swipe({
                     swipeLeft:function(){
                         nowpage += 1;
                         if(nowpage == len) {nowpage = 0;}
@@ -169,7 +169,6 @@
 
             function window_resize()
             {
-                //alert($("body").outerWidth());
                 if($("body").outerWidth()>992 )
                 {
                    deatalbit(pcnumber,autotime,pc_handtime,pc_row);
@@ -187,25 +186,8 @@
 
             function deatalbit(num,a,b,c)
             {
-                    var n = $(slidebox).find(slide +' .page').length;
+                    var n = $(slidebox).find(slide +' .slide-page').length;
                     var contpage="";
-                    /*if(lazyload)
-                    {
-                        $(slidebox + " .page img").each(function(){
-                            if(typeof($(this).attr("data-original"))=="undefined")
-                            {
-                                var that = $(this);
-                                var re=/(.+?.(jpg|bmp|png|jepg|gif))/i;
-                                href = that.attr("src");
-                                if (re.test(href)) {
-                                    that.attr("data-original",href);//转移原图片中的真链接到data-original
-                                    href =href.replace(re, "http://abc.prykweb.com/images/public/grey.gif");//定义未加载前的图片
-                                    that.attr("src",href);
-                                }
-                            }
-                        });
-
-                    }*/
 
                     if(n < num)
                     {
@@ -213,7 +195,7 @@
                         contpage += "<li>";
                         for(var j=0; j<n; j++)
                         {
-                            contpage +="<div class='page'>"+ $(slidebox).find(slide +' .page').eq(j).html() +"</div>";
+                            contpage +="<div class='slide-page'>"+ $(slidebox).find(slide +' .slide-page').eq(j).html() +"</div>";
                         }
                         contpage += "</li>";
 
@@ -228,7 +210,7 @@
                                 contpage += "<li>";
                                 for(var j=0; j<num; j++)
                                 {
-                                    contpage +="<div class='page'>"+ $(slidebox).find(slide +' .page').eq(i*num+j).html() +"</div>";
+                                    contpage +="<div class='slide-page'>"+ $(slidebox).find(slide +' .slide-page').eq(i*num+j).html() +"</div>";
                                 }
                                 contpage += "</li>";
                             }
@@ -243,7 +225,7 @@
                                    contpage += "<li>";
                                    for(var j=0; j < n-(Math.floor(n/num)*num); j++)
                                     {
-                                        contpage += "<div class='page'>"+ $(slidebox).find(slide +' .page').eq(i*num + j).html() +"</div>";
+                                        contpage += "<div class='slide-page'>"+ $(slidebox).find(slide +' .slide-page').eq(i*num + j).html() +"</div>";
                                     }
                                    contpage += "</li>";
                                 }
@@ -252,16 +234,16 @@
                                     contpage += "<li>";
                                     for(var j=0; j<num; j++)
                                     {
-                                        contpage += "<div class='page'>"+ $(slidebox).find(slide +' .page').eq(i*num + j).html() +"</div>";
+                                        contpage += "<div class='slide-page'>"+ $(slidebox).find(slide +' .slide-page').eq(i*num + j).html() +"</div>";
                                     }
                                     contpage += "</li>";
                                 }
                             }
                         }
                     }
-                   $(slidebox).find(slide +" ul li").remove();
-                   $(slidebox).find(slide +" ul").append(contpage);
-                   slidescroll(num,a,b,c);
+                    $(slidebox).find(slide +" ul li").remove();
+                    $(slidebox).find(slide +" ul").append(contpage);
+                    slidescroll(num,a,b,c);
             }
   }
 })(jQuery);

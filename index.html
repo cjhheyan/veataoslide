@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style type="text/css">
+        *{ padding: 0; margin: 0;}
+        li{ list-style: none;}
+        .veataoslidebox{ position: relative; max-width: 1200px; margin:0 auto; overflow:hidden;}
+        .veataoslidebox .veataoslide{ position: relative; overflow: hidden;}
+        .veataoslidebox li{ float: left; text-align: center;}
+		.veataoslidebox li .slide-page { float: left;}
+		.veataoslidebox .prevnext{ position: absolute; display: block; width: 40px; height: 41px; top: 50%; margin-top: -20px;}
+        .veataoslidebox .veatao-prev{ background: url(images/prev.png) 0 0 no-repeat; left: 2%;}
+        .veataoslidebox .veatao-next{ background: url(images/next.png) 0 0 no-repeat; right: 2%;}
+
+        .veataoslidebox li .slide-page .doc-detailbox { display: inline-block; text-align:left;  padding: 10px;}
+        .doc-detailbox img{display: block; max-width: 280px; width: 100%; border: 0; }
+        .doc-detailbox .details{background: #666; color: #fff; padding: 10px;  }
+
+    </style>
+</head>
+<body>
+    <div class="veataoslidebox" id="veataoslidebox">
+        <div class="veataoslide" id="veataoslide">
+            <ul>
+                <li>
+                    <div class="slide-page">
+                        <div class="doc-detailbox">
+                            <img src="images/h1.jpg" alt="">
+                            <div class="details">
+                                 图片一
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-page">
+                        <div class="doc-detailbox">
+                            <img src="images/h2.jpg" alt="">
+                            <div class="details">
+                                 图片二
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-page">
+                        <div class="doc-detailbox">
+                            <img src="images/h3.jpg" alt="">
+                            <div class="details">
+                                 图片三
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                       <div class="slide-page">
+                        <div class="doc-detailbox">
+                            <img src="images/h4.jpg" alt="">
+                            <div class="details">
+                                 图片四
+                            </div>
+                        </div>
+                      </div>
+                      <div class="slide-page">
+                        <div class="doc-detailbox">
+                            <img src="images/h5.jpg" alt="">
+                            <div class="details">
+                                 图片五
+                            </div>
+                        </div>
+                      </div>
+                     <div class="slide-page">
+                        <div class="doc-detailbox">
+                            <img src="images/h6.jpg" alt="">
+                            <div class="details">
+                                 图片六
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="slide-page">
+                        <div class="doc-detailbox">
+                            <img src="images/h7.jpg" alt="">
+                            <div class="details">
+                                 图片七
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-page">
+                        <div class="doc-detailbox">
+                            <img src="images/h8.jpg" alt="">
+                            <div class="details">
+                                 图片八
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-page">
+                        <div class="doc-detailbox">
+                            <img src="images/h9.jpg" alt="">
+                            <div class="details">
+                                 图片九
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <a class="prevnext veatao-prev" id="veatao-prev"></a>
+        <a class="prevnext veatao-next" id="veatao-next"></a>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+    <script type="text/javascript" src="js/veataoslide.js"></script>
+    <script type="text/javascript">
+          $("#veataoslidebox").touchswipe1({
+            slidebox:"#veataoslidebox", //外层大框标签
+            slide:"#veataoslide", //滚动层标签
+            slidehoverli:'veatao-pagination', //小图标切换标签
+            prev:"#veatao-prev", //上一页切换标签
+            next:"#veatao-next", //下一页切换标签
+            pagecontex:false, //是否有小图标切换标签
+            pc_autotime:3000,   //自动切换的时间
+            pc_handtime:2000,   //PC手动切换的时间
+            ipad_handtime:1000,   //IPAd手动切换的时间
+            mob_handtime:500,   //mobile手动切换的时间
+            pcnumber:4,  //pc显示个数
+            ipadnumber:3,  //ipad显示个数
+            mobnumber:2 //手机显示个数
+          });
+    </script>
+
+</body>
+</html>
