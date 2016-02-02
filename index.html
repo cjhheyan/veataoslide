@@ -6,107 +6,213 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style type="text/css">
         *{ padding: 0; margin: 0;}
+        .container{ max-width: 1000px; margin: 0 auto;}
+        h1{ font-size: 25px; padding: 10px 0 0;}
+        p{ margin: 10px 0;}
         li{ list-style: none;}
-        .veataoslidebox{ position: relative; max-width: 1200px; margin:0 auto; overflow:hidden;}
+        .veataoslidebox{ position: relative; max-width: 1200px; overflow:hidden; margin-left: -10px;}
         .veataoslidebox .veataoslide{ position: relative; overflow: hidden;}
         .veataoslidebox li{ float: left; text-align: center;}
 		.veataoslidebox li .slide-page { float: left;}
 		.veataoslidebox .prevnext{ position: absolute; display: block; width: 40px; height: 41px; top: 50%; margin-top: -20px;}
         .veataoslidebox .veatao-prev{ background: url(images/prev.png) 0 0 no-repeat; left: 2%;}
         .veataoslidebox .veatao-next{ background: url(images/next.png) 0 0 no-repeat; right: 2%;}
-
-        .veataoslidebox li .slide-page .doc-detailbox { display: inline-block; text-align:left;  padding: 10px;}
+        .veataoslidebox li .slide-page .doc-detailbox { display: inline-block; text-align:left;padding-right: 20px; padding: 0 10px;}
         .doc-detailbox img{display: block; max-width: 280px; width: 100%; border: 0; }
-        .doc-detailbox .details{background: #666; color: #fff; padding: 10px;  }
+        .doc-detailbox .details{background: #666; color: #fff; padding: 10px; }
+
+
+        .veataoslide-singlebox{position: relative; max-width: 915px; overflow: hidden;}
+        .veataoslide-single{ position: relative; overflow: hidden;}
+        .veataoslide-single li{ float: left; text-align: center;}
+        .veataoslide-single li .slide-page{float: left;}
+        .veataoslide-singlebox .prevnext{ position: absolute; display: block; width: 40px; height: 41px; top: 50%; margin-top: -20px;}
+        .veataoslide-singlebox .veatao-prev{ background: url(images/prev.png) 0 0 no-repeat; left: 2%;}
+        .veataoslide-singlebox .veatao-next{ background: url(images/next.png) 0 0 no-repeat; right: 2%;}
+        .veataoslide-single li .slide-page .single-detailbox { display: inline-block; text-align:left; }
+        .single-detailbox img{display: block; width: 100%; border: 0; }
+        .single-detailbox .details{background: #666; color: #fff; padding: 10px; }
 
     </style>
 </head>
 <body>
-    <div class="veataoslidebox" id="veataoslidebox">
-        <div class="veataoslide" id="veataoslide">
-            <ul>
-                <li>
-                    <div class="slide-page">
-                        <div class="doc-detailbox">
-                            <img src="images/h1.jpg" alt="">
-                            <div class="details">
-                                 图片一
+    <div class="container">
+        <h1>demo1:</h1>
+        <p>次效果是多个图片切换的效果，在不同尺寸的屏幕下有不同的显示个数，还有在不同的屏幕下可以显示不同的行数。</p>
+        <div class="veataoslidebox" id="veataoslidebox">
+            <div class="veataoslide" id="veataoslide">
+                <ul>
+                    <li>
+                        <div class="slide-page">
+                            <div class="doc-detailbox">
+                                <img src="images/h1.jpg" alt="">
+                                <div class="details">
+                                     图片一
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="slide-page">
-                        <div class="doc-detailbox">
-                            <img src="images/h2.jpg" alt="">
-                            <div class="details">
-                                 图片二
+                        <div class="slide-page">
+                            <div class="doc-detailbox">
+                                <img src="images/h2.jpg" alt="">
+                                <div class="details">
+                                     图片二
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="slide-page">
-                        <div class="doc-detailbox">
-                            <img src="images/h3.jpg" alt="">
-                            <div class="details">
-                                 图片三
+                        <div class="slide-page">
+                            <div class="doc-detailbox">
+                                <img src="images/h3.jpg" alt="">
+                                <div class="details">
+                                     图片三
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                       <div class="slide-page">
-                        <div class="doc-detailbox">
-                            <img src="images/h4.jpg" alt="">
-                            <div class="details">
-                                 图片四
+                    </li>
+                    <li>
+                           <div class="slide-page">
+                            <div class="doc-detailbox">
+                                <img src="images/h4.jpg" alt="">
+                                <div class="details">
+                                     图片四
+                                </div>
+                            </div>
+                          </div>
+                          <div class="slide-page">
+                            <div class="doc-detailbox">
+                                <img src="images/h5.jpg" alt="">
+                                <div class="details">
+                                     图片五
+                                </div>
+                            </div>
+                          </div>
+                         <div class="slide-page">
+                            <div class="doc-detailbox">
+                                <img src="images/h6.jpg" alt="">
+                                <div class="details">
+                                     图片六
+                                </div>
                             </div>
                         </div>
-                      </div>
-                      <div class="slide-page">
-                        <div class="doc-detailbox">
-                            <img src="images/h5.jpg" alt="">
-                            <div class="details">
-                                 图片五
+                    </li>
+                    <li>
+                        <div class="slide-page">
+                            <div class="doc-detailbox">
+                                <img src="images/h7.jpg" alt="">
+                                <div class="details">
+                                     图片七
+                                </div>
                             </div>
                         </div>
-                      </div>
-                     <div class="slide-page">
-                        <div class="doc-detailbox">
-                            <img src="images/h6.jpg" alt="">
-                            <div class="details">
-                                 图片六
+                        <div class="slide-page">
+                            <div class="doc-detailbox">
+                                <img src="images/h8.jpg" alt="">
+                                <div class="details">
+                                     图片八
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="slide-page">
-                        <div class="doc-detailbox">
-                            <img src="images/h7.jpg" alt="">
-                            <div class="details">
-                                 图片七
+                        <div class="slide-page">
+                            <div class="doc-detailbox">
+                                <img src="images/h9.jpg" alt="">
+                                <div class="details">
+                                     图片九
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="slide-page">
-                        <div class="doc-detailbox">
-                            <img src="images/h8.jpg" alt="">
-                            <div class="details">
-                                 图片八
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide-page">
-                        <div class="doc-detailbox">
-                            <img src="images/h9.jpg" alt="">
-                            <div class="details">
-                                 图片九
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </div>
+            <a class="prevnext veatao-prev" id="veatao-prev"></a>
+            <a class="prevnext veatao-next" id="veatao-next"></a>
         </div>
-        <a class="prevnext veatao-prev" id="veatao-prev"></a>
-        <a class="prevnext veatao-next" id="veatao-next"></a>
+        <h1>demo2:</h1>
+        <p>单个焦点图切换效果。</p>
+        <div class="veataoslide-singlebox" id="veataoslidebox1">
+            <div class="veataoslide-single" id="veataoslide1">
+                <ul>
+                    <li>
+                        <div class="slide-page">
+                            <div class="single-detailbox">
+                                <img src="images/h1.jpg" alt="">
+                                <div class="details">
+                                     图片一
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-page">
+                            <div class="single-detailbox">
+                                <img src="images/h2.jpg" alt="">
+                                <div class="details">
+                                     图片二
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-page">
+                            <div class="single-detailbox">
+                                <img src="images/h3.jpg" alt="">
+                                <div class="details">
+                                     图片三
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                           <div class="slide-page">
+                            <div class="single-detailbox">
+                                <img src="images/h4.jpg" alt="">
+                                <div class="details">
+                                     图片四
+                                </div>
+                            </div>
+                          </div>
+                          <div class="slide-page">
+                            <div class="single-detailbox">
+                                <img src="images/h5.jpg" alt="">
+                                <div class="details">
+                                     图片五
+                                </div>
+                            </div>
+                          </div>
+                         <div class="slide-page">
+                            <div class="single-detailbox">
+                                <img src="images/h6.jpg" alt="">
+                                <div class="details">
+                                     图片六
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="slide-page">
+                            <div class="single-detailbox">
+                                <img src="images/h7.jpg" alt="">
+                                <div class="details">
+                                     图片七
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-page">
+                            <div class="single-detailbox">
+                                <img src="images/h8.jpg" alt="">
+                                <div class="details">
+                                     图片八
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-page">
+                            <div class="single-detailbox">
+                                <img src="images/h9.jpg" alt="">
+                                <div class="details">
+                                     图片九
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <a class="prevnext veatao-prev" id="veatao-prev1"></a>
+            <a class="prevnext veatao-next" id="veatao-next1"></a>
+        </div>
     </div>
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
@@ -124,8 +230,24 @@
             ipad_handtime:1000,   //IPAd手动切换的时间
             mob_handtime:500,   //mobile手动切换的时间
             pcnumber:4,  //pc显示个数
-            ipadnumber:3,  //ipad显示个数
-            mobnumber:2 //手机显示个数
+            ipadnumber:3,  //ipad显示个数s
+            mobnumber:4 //手机显示个数
+          });
+
+          $("#veataoslidebox1").touchswipe1({
+            slidebox:"#veataoslidebox1", //外层大框标签
+            slide:"#veataoslide1", //滚动层标签
+            slidehoverli:'veatao-pagination1', //小图标切换标签
+            prev:"#veatao-prev1", //上一页切换标签
+            next:"#veatao-next1", //下一页切换标签
+            pagecontex:false, //是否有小图标切换标签
+            pc_autotime:3000,   //自动切换的时间
+            pc_handtime:500,   //PC手动切换的时间
+            ipad_handtime:1000,   //IPAd手动切换的时间
+            mob_handtime:500,   //mobile手动切换的时间
+            pcnumber:1,  //pc显示个数
+            ipadnumber:1,  //ipad显示个数s
+            mobnumber:1 //手机显示个数
           });
     </script>
 
